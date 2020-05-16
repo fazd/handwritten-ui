@@ -65,6 +65,10 @@ html {
 
 .btn{
     margin: 10px 10px 5px 5px;
+
+    #git-btn{
+        margin-top:18px;
+    }
 }
 
 
@@ -84,6 +88,24 @@ html {
     text-align: start;
 }
 
-.icon{
+a{
     margin-top:7px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+i{
+    color: white;
+}
+
+.repo{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.group {
+    margin: 10px 10px 15px 5px;
+
 }

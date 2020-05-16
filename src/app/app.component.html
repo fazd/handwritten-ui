@@ -10,7 +10,7 @@
     <mat-card class="card">
       <mat-card-header class="card-title">
         <mat-card-title >
-          <span>Write a number</span> 
+          <span style="color: #2794fa;">Write a number</span> 
         </mat-card-title>
       </mat-card-header>
       <mat-card-content class="card-content">
@@ -33,8 +33,8 @@
           <br>
         </div>
         <div>
-          <button mat-raised-button color="primary" class="btn" (click)="erase()">Clear</button>
-          <button mat-raised-button color="primary" class="btn" (click)="create()">Guess</button>
+          <button mat-raised-button class="group" color ="primary"  (click)="erase()">Clear</button>
+          <button mat-raised-button class="group" color ="primary" (click)="create()">Guess</button>
         </div>
         <div class="text-cont">
           <h3>El numero adivinado es : {{selected}} </h3>
@@ -46,8 +46,18 @@
   <mat-toolbar class="footer bar" >
     <h4>Developed by Emanuel A. and Fabio Z.</h4>
     <span class="spacer"></span>
-    <p><i class="icon-github icon-2x icon"></i></p>
-
-
+    <span style="padding-top:5px;">Visita nuestros repositorios</span>
+    <div class="repo">
+      <a href="https://github.com/fazd/handwritten-ui" target="__blank">
+        <i class="icon-github icon-large icon"></i>
+      </a>
+      <a class="github-button" id="git-btn" href="https://github.com/fazd/handwritten-ui" data-icon="octicon-star" data-show-count="true" aria-label="Star fazd/handwritten-ui on GitHub">Star</a>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/fazd/handwritten-ui" target="__blank">
+        <i class="icon-github icon-large icon"></i>
+      </a>
+      <a class="github-button" id="git-btn" href="https://github.com/ManuLasker/handwritten-digits-app" data-icon="octicon-star" data-show-count="true" aria-label="Star fazd/handwritten-ui on GitHub">Star</a>
+    </div>
   </mat-toolbar>
 </div>
