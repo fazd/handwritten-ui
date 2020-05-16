@@ -21,7 +21,7 @@ export class AppComponent {
   public widthLine = 0;
   public width = 0;
   public height = 0;
-  public selected= 6;
+  public selected= 8;
   
   ngOnInit() {
     this.canvas = document.getElementById('mycanvas');  
@@ -60,9 +60,9 @@ export class AppComponent {
       this.ctx.beginPath();
       this.ctx.moveTo(this.prevX, this.prevY);
       this.ctx.arc(this.currX,this.currY,this.selected,0,2*Math.PI,false);
-      // this.ctx.lineTo(this.currX, this.currY);
+      //this.ctx.lineTo(this.currX, this.currY);
       this.ctx.fillStyle = '#ffffff';
-      this.ctx.strokeStyle = '#ffffff';
+      //this.ctx.strokeStyle = '#ffffff';
       this.ctx.fill();
       this.ctx.stroke();
       this.ctx.closePath();
@@ -92,7 +92,7 @@ export class AppComponent {
           this.ctx.fillStyle = '#ffffff';
           this.ctx.strokeStyle = '#ffffff';
           this.ctx.fill();
-          this.ctx.stroke();
+          //this.ctx.stroke();
           this.ctx.closePath();
           this.dot_flag = false;
         }
