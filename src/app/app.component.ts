@@ -21,7 +21,7 @@ export class AppComponent {
   public widthLine = 0;
   public width = 0;
   public height = 0;
-  public selected= '';
+  public selected= 6;
   
   ngOnInit() {
     this.canvas = document.getElementById('mycanvas');  
@@ -59,9 +59,11 @@ export class AppComponent {
   draw() {
       this.ctx.beginPath();
       this.ctx.moveTo(this.prevX, this.prevY);
-      this.ctx.lineTo(this.currX, this.currY);
-      this.ctx.lineWidth = this.selected;
+      this.ctx.arc(this.currX,this.currY,this.selected,0,2*Math.PI,false);
+      // this.ctx.lineTo(this.currX, this.currY);
+      this.ctx.fillStyle = '#ffffff';
       this.ctx.strokeStyle = '#ffffff';
+      this.ctx.fill();
       this.ctx.stroke();
       this.ctx.closePath();
   }
@@ -85,7 +87,12 @@ export class AppComponent {
         this.dot_flag = true;
         if (this.dot_flag) {
           this.ctx.beginPath();
-          this.ctx.fillRect(this.currX, this.currY, 2, 2);
+          this.ctx.arc(this.currX,this.currY,this.selected,0,2*Math.PI,false);
+          // this.ctx.lineTo(this.currX, this.currY);
+          this.ctx.fillStyle = '#ffffff';
+          this.ctx.strokeStyle = '#ffffff';
+          this.ctx.fill();
+          this.ctx.stroke();
           this.ctx.closePath();
           this.dot_flag = false;
         }
@@ -106,7 +113,7 @@ export class AppComponent {
   }
 
   create(){
-    const data = this.canvas.toDataURL();
+    const data = this.canvas.toDataURL("image/jpeg");
     console.log(data);
   }
 
