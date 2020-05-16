@@ -28,6 +28,9 @@ html {
     margin: 12px 12px 12px 12px;
     justify-content: center;
     align-content: center;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .footer {
@@ -41,8 +44,10 @@ html {
 
 .card{
     max-width: 700px;
-    max-height: 700px;
+    min-height: 550px;
+    height: 10vh;
     width: 350px;
+    align-self:center;
     text-align: center;
     justify-content: center;
     align-content: center;
