@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RequestService } from './request.service'; 
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-const axios = require('axios');
+import axios from 'axios';
 
 @Component({
   selector: 'app-root',
