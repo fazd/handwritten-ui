@@ -29,8 +29,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@types/jquery": "^3.3.36",
     "axios": "^0.19.2",
+    "http": "0.0.1-security",
     "install": "^0.13.0",
     "rxjs": "~6.5.4",
+    "service": "^0.1.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

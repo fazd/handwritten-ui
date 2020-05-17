@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { RequestService } from './request.service'; 
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+const axios = require('axios');
 
 @Component({
   selector: 'app-root',
@@ -7,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hand-written-ui';
-  
+  public rs : RequestService;
 
   public canvas:any;
   public card: any;
@@ -22,7 +25,13 @@ export class AppComponent {
   public width = 0;
   public height = 0;
   public selected= 8;
+  public guessed = 0;
+  public probability = 0;
   
+  constructor(){
+
+  }
+
   ngOnInit() {
     this.canvas = document.getElementById('mycanvas');  
     this.ctx = this.canvas.getContext("2d");
@@ -115,6 +124,21 @@ export class AppComponent {
   create(){
     const data = this.canvas.toDataURL("image/jpeg");
     console.log(data);
+    const body = {
+      image : data
+    }
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+    axios.post('https://digits-recognition-ml.herokuapp.com/predict-digit',body,headers).then((response) => {
+      console.log(response);
+      this.guessed = response.prediction;
+      this.probability = response.probability;
+    }, (error) => {
+      console.log(error);
+    });
+
+
   }
 
 
