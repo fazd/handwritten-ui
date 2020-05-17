@@ -129,10 +129,10 @@ export class AppComponent {
     const headers = {
       'Content-Type': 'application/json'
     }
-    axios.post('https://digits-recognition-ml.herokuapp.com/predict-digit',body,headers).then((response) => {
+    axios.post('https://digits-recognition-ml.herokuapp.com/predict-digit',body).then((response) => {
       console.log(response);
-      this.guessed = response.prediction;
-      this.probability = response.probability;
+      // this.guessed = response.prediction;
+      // this.probability = response.probability;
     }, (error) => {
       console.log(error);
     });
