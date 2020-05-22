@@ -126,13 +126,15 @@ export class AppComponent {
     const body = {
       image : data
     }
-    const headers = {
-      'Content-Type': 'application/json'
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*'},
     }
-    axios.post('https://digits-recognition-ml.herokuapp.com/predict-digit',body).then((response) => {
-      console.log(response);
-      // this.guessed = response.prediction;
-      // this.probability = response.probability;
+    axios.post('https://digits-recognition-ml.herokuapp.com/predict-digit',body, config).then((response) => {
+    console.log(response);
+      this.guessed = response.data.prediction;
+      this.probability = response.data.probability;
     }, (error) => {
       console.log(error);
     });
